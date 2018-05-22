@@ -43,9 +43,7 @@ call_from_080 = set()
 def list_080_called (record):
     if record[0][:5] == "(080)":
         if record[1][0] == "(":
-            call_from_080.add(record[1].split(')')[0] + ')')
-        elif record[1][:3] == "140":
-            call_from_080.add("140")
+            call_from_080.add(record[1].split(')')[0][1:])
         else:
             call_from_080.add(record[1][:4])
 for call in calls:
