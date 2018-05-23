@@ -28,10 +28,10 @@ def found_call_time (records, value):
         records[value[0]] += int(value[3])
     else:
         records[value[0]] = int(value[3])
-        if value[1] in records:
-            records[value[1]] += int(value[3])
-        else:
-            records[value[1]] = int(value[3])
+    if value[1] in records:
+        records[value[1]] += int(value[3])
+    else:
+        records[value[1]] = int(value[3])
 for call in calls:
     found_call_time(call_time, call)
 target = max(zip(call_time.values(), call_time.keys()))
